@@ -1,22 +1,30 @@
+# Cantidad de réplicas del deployment
 replicaCount: 2
 
 image:
+  # Imagen del contenedor
   repository: nginx
+  # Tag de la imagen
   tag: alpine
+  # Política de descarga de la imagen
   pullPolicy: IfNotPresent
 
 service:
+  # Tipo de servicio (ClusterIP, NodePort, LoadBalancer)
   type: ClusterIP
+  # Puerto expuesto por el servicio
   port: 80
 
+
 ingress:
+ # Habilita o deshabilita Ingress
   enabled: true
   className: "nginx"
   annotations: {}
   hosts:
-    - host: demo.local
+    - host: demo.local  # Dominio para acceder vía Ingress
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls: []
+  tls: []  # TLS (si se define)
 
