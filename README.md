@@ -4,7 +4,7 @@ Este Helm Chart despliega un servidor NGINX en Kubernetes de forma parametrizabl
 
 ---
 
-## 🚀 Instalación
+## ⚙️ Instalación
 
 ### Con valores por defecto:
 
@@ -12,12 +12,12 @@ Este Helm Chart despliega un servidor NGINX en Kubernetes de forma parametrizabl
 helm install demo-nginx ./demo-chart
 ```
 
-### Con valores por defecto:
+### Con valores por archivo modificado:
 
 ```bash
 helm install demo-nginx ./demo-chart -f my-values.yaml
 ```
-## Valores modificables
+## 🧩 Valores modificables
 
 | Clave                 | Descripción                                          | Valor por defecto |
 | --------------------- | ---------------------------------------------------- | ----------------- |
@@ -30,6 +30,7 @@ helm install demo-nginx ./demo-chart -f my-values.yaml
 | ingress.enabled       | Habilita el Ingress                                  | true              |
 | ingress.hosts\[].host | Host utilizado por el Ingress                        | demo.local        |
 
+---
 ### Validacion del Chart:
 ```bash
 helm lint ./demo-chart
@@ -43,6 +44,11 @@ helm lint ./demo-chart
 ### Acceder a la aplicación:
 ```bash
 http://demo.local
+```
+
+## 🧹 Desistalar aplicación:
+```bash
+helm uninstall demo-nginx
 ```
 
 
