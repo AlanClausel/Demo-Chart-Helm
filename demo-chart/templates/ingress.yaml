@@ -11,7 +11,7 @@ spec:
   {{- if .Values.ingress.className }}
   ingressClassName: {{ .Values.ingress.className }}
   {{- end }}
-  rules:
+  rules: # Reglas por host (ej: demo.local)
     {{- range .Values.ingress.hosts }}
     - host: {{ .host }}
       http:
@@ -27,7 +27,7 @@ spec:
           {{- end }}
     {{- end }}
   {{- if .Values.ingress.tls }}
-  tls:
+  tls:  # Configuración de TLS si se provee
     {{- toYaml .Values.ingress.tls | nindent 4 }}
   {{- end }}
 {{- end }}
