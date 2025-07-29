@@ -4,6 +4,19 @@ Este Helm Chart despliega un servidor NGINX en Kubernetes de forma parametrizabl
 
 ---
 
+📋 Prerrequisitos
+Antes de instalar este chart, asegurate de tener lo siguiente:
+
+✅ Helm 3 instalado en tu entorno.
+
+✅ Un clúster de Kubernetes funcionando (se recomienda Minikube).
+
+✅ kubectl configurado y conectado al clúster.
+
+✅ (Opcional) Ingress Controller habilitado si se desea usar ingress.enabled: true.
+
+---
+
 ## ⚙️ Instalación
 
 ### Con valores por defecto:
